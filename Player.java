@@ -83,6 +83,7 @@ public class Player {
     public void usePotion(Potion p){
         hp = hp + p.getHpVal();
         currentBuff = currentBuff + p.getBuffVal();
+        inventory.remove(p);
     }
 
     public void takeDmg(int dmg){
