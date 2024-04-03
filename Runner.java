@@ -45,7 +45,18 @@ public class Runner {
             }
             else { System.out.println("Command not recognized!"); }
 
-            
+            d.printMap();
+
+            for (Entity e : currentRoom.getContents()) {
+                if (e instanceof Monster) {
+                    Monster m = (Monster) e;
+                    System.out.println(m.getName() + " deals " + m.getDmg() + "to you!");
+                    p.takeDmg(m.getDmg());
+                    System.out.println("You are at " + p.getHp() + "/100 HP!");
+                    if (p.getHp() <= 0) { System.out.println("You lose."); break;}
+                }
+            }
+
         }
     }
 }

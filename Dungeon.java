@@ -35,9 +35,9 @@ class Dungeon {
     public int getEntranceCol() { return entranceCol; }
 
     // Methods
-    private void printMap(ArrayList<Room> map){
+    public void printMap(){
         System.out.println(name + ": ");
-        System.out.println(map.toString());
+        System.out.println(dungeon.toString());
     }
 
     public void populateMap() {
