@@ -1,3 +1,7 @@
+
+/**
+ * 
+ */
 public class Entity {
     // Fields
     private String name;

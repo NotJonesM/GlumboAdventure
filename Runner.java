@@ -3,11 +3,50 @@ import java.util.Scanner;
 
 public class Runner {
     public static void main(String[] args) {
+        ArrayList<Monster> monsters = new ArrayList<>();
+        monsters.add(new Monster("Zombie", 32, 10));
+        monsters.add(new Monster("Skeleton", 25, 5));
+        monsters.add(new Monster("Spider", 20, 6));
+        monsters.add(new Monster("Bat", 5, 2));
+        monsters.add(new Monster("Zombie Knight", 40, 15));
+        monsters.add(new Monster("Skeleton Knight", 35, 13));
+        monsters.add(new Monster("Bat", 5, 2));
+        monsters.add(new Monster("Bat", 5, 2));
+        monsters.add(new Monster("Bat", 5, 2));
+        monsters.add(new Monster("Zombie", 32, 10));
+        monsters.add(new Monster("Skeleton", 25, 5));
+        monsters.add(new Monster("Spider", 20, 6));
+        monsters.add(new Monster("Zombie", 32, 10));
+        monsters.add(new Monster("Skeleton", 25, 5));
+        monsters.add(new Monster("Spider", 20, 6));
+        monsters.add(new Monster("Zombie Knight", 40, 15));
+        monsters.add(new Monster("Skeleton Knight", 35, 13));
+
+        ArrayList<Item> items = new ArrayList<>();
+        items.add(new Weapon("Longsword", 13, false, false));
+        items.add(new Weapon("Shortsword", 9, false, false));
+        items.add(new Weapon("Dagger", 7, false, false));
+        items.add(new Weapon("Stick", 6, false, false));
+        items.add(new Weapon("Severed Arm", 1, false, false));
+        items.add(new Weapon("Sharp Bone", 3, false, false));
+        items.add(new Weapon("Excalibur", 50, false, false));
+        items.add(new Weapon("Worn Longsword", 10, false, false));
+        items.add(new Weapon("Worn Shortsword", 8, false, false));
+        items.add(new Weapon("Dagger", 7, false, false));
+        items.add(new Weapon("Stick", 6, false, false));
+        items.add(new Weapon("Dagger", 7, false, false));
+        items.add(new Weapon("Stick", 6, false, false));
+        items.add(new Weapon("Worn Longsword", 10, false, false));
+        items.add(new Weapon("Worn Shortsword", 8, false, false));
+        items.add(new Weapon("Worn Longsword", 10, false, false));
+        items.add(new Weapon("Worn Shortsword", 8, false, false));
+
         Dungeon d = new Dungeon("The Undercity", 5, 5, new ArrayList<Entity>(), new ArrayList<Entity>(), 0, 0, 5, 5);
         Player p = new Player("Yourself");
         Scanner scan = new Scanner(System.in);
         boolean running = true;
 
+        System.out.println("Welcome to Glumbo Adventure, the text-based dungeon crawler you know and love! Move around the map by typing the keywords “Move Up”, “Move Down”, “Move Left”, and “Move Right”. Fight your way through enemies and collect cool treasure! Good luck and have fun!");
         while(running) { // ###### MAIN RUNNER LOOP #####
             System.out.print("Enter a command: ");
             String in = scan.nextLine().toUpperCase();
