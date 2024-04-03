@@ -4,9 +4,28 @@ public class Player {
     private int hp = 100;
     private String name;
     private ArrayList<Item> inventory;
+    private double currentBuff = 0;
 
     public void attack(Monster mob){
-        mob.changeHp(5);
+        for (Item i : inventory){
+            if (i instanceof Weapon w){
+                if (currentBuff > 0){
+                    mob.changeHp((int) (w.getDamage() * currentBuff));
+                    currentBuff = 0;
+                }else{
+                    mob.changeHp(w.getDamage());
+                }
+                
+            }else{
+                if (currentBuff > 0){
+                    mob.changeHp((int) (5 * currentBuff));
+                    currentBuff = 0;
+                }else{
+                    mob.changeHp(5);
+                }
+                
+            }
+        }
     }
 
     public int getHp(){
@@ -19,5 +38,27 @@ public class Player {
 
     public ArrayList<Item> getInventory(){
         return inventory;
+    }
+
+    public void pickUpItem(Item i){
+        if(i instanceof Weapon){
+            inventory.add(0, i);
+        }else{
+            inventory.add(i);
+        }
+    }
+
+    public void goThroughDoor(Door d){
+        if (d.isExit()){
+            //TODO Add an ending, kill program or something idk
+            System.out.println("You win!");
+        }else{
+            //TODO Make this do something lol
+        }
+    }
+
+    public void usePotion(Potion p){
+        hp = hp + p.getHpVal();
+        currentBuff = currentBuff + p.getBuffVal();
     }
 }
