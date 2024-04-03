@@ -1,11 +1,35 @@
 import java.util.ArrayList;
 
 public class Player {
-    private int hp = 100;
+    private int hp;
     private String name;
     private ArrayList<Item> inventory;
     private double currentBuff = 0;
 
+    //Constructors
+    public Player(){
+        name = "Nameless";
+        hp = 100;
+    }
+
+    public Player(String name){
+        this.name = name;
+        hp = 100;
+    }
+    //Accessors
+    public int getHp(){
+        return hp;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public ArrayList<Item> getInventory(){
+        return inventory;
+    }
+
+    //Methods
     public void attack(Monster mob){
         for (Item i : inventory){
             if (i instanceof Weapon w){
@@ -26,18 +50,6 @@ public class Player {
                 
             }
         }
-    }
-
-    public int getHp(){
-        return hp;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public ArrayList<Item> getInventory(){
-        return inventory;
     }
 
     public void pickUpItem(Item i){
