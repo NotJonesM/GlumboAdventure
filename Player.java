@@ -73,4 +73,8 @@ public class Player {
         hp = hp + p.getHpVal();
         currentBuff = currentBuff + p.getBuffVal();
     }
+
+    public void takeDmg(int dmg){
+        hp = hp - dmg;
+    }
 }
