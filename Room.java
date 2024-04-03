@@ -75,6 +75,7 @@ public class Room {
      * @param e - the entity to be removed
      */
     public void removeEntity(Entity e){
+
         contents.remove(e);
     }
 

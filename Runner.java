@@ -10,18 +10,38 @@ public class Runner {
         while(true) { // ###### MAIN RUNNER LOOP #####
             System.out.print("Enter a command: ");
             String in = scan.nextLine().toUpperCase();
-            if (GlumboToolbox.matchStart(in, "GRAB")) { /* TODO add get item functionality */}
-            else if (GlumboToolbox.matchStart(in, "ATTACK")) { /* TODO add attack functionality */}
+            Room currentRoom = d.getDungeon().get(p.getRow()).get(p.getCol());
+            if (GlumboToolbox.matchStart(in, "GRAB")) { 
+                Entity item = currentRoom.getContents().get((currentRoom.getContents().indexOf(in.substring(5, in.length()))));
+                System.out.println("You pick up the " + item.getName());
+                p.pickUpItem((Item) item);
+                currentRoom.removeEntity(item);
+            }
+            else if (GlumboToolbox.matchStart(in, "ATTACK")) {
+                Monster mob = (Monster) currentRoom.getContents().get((currentRoom.getContents().indexOf(in.substring(7, in.length()))));
+                System.out.println("You attack the " + mob.getName() + ", leaving it with " + mob.getHp() + " hit points!");
+                p.attack(mob);
+                if (mob.getHp() <= 0) { 
+                    currentRoom.removeEntity(mob); 
+                    System.out.println("You killed the " + mob.getName());
+                }
+            }
             else if (GlumboToolbox.matchStart(in, "MOVE")) {
-                switch(in.substring(4, in.length())) {
+                System.out.println("You move one room " + in.substring(5, in.length()));
+                switch(in.substring(5, in.length())) {
                     case "UP": { p.moveUp(); break; }
                     case "DOWN": { p.moveDown(); break; }
                     case "LEFT": { p.moveLeft(); break; }
                     case "RIGHT": { p.moveRight(); break; }
                 }
-                System.out.println(d.getDungeon().get(p.getRow()).get(p.getCol()));
+                System.out.println(currentRoom);
             }
-            else if (GlumboToolbox.matchStart(in, "USE")) { /* TODO add use functionality */}
+            else if (GlumboToolbox.matchStart(in, "USE")) {
+                Potion pot = (Potion) p.getInventory()
+            }
+            else if (GlumboToolbox.matchStart(in, "INVENTORY")) { 
+                System.out.println(p.getInventory()); // TODO idk if this will work
+            }
             else { System.out.println("Command not recognized!"); }
         }
     }
