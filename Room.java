@@ -114,10 +114,24 @@ public class Room {
     public String toString(){
         String str = "Room with: ";
         for (int i = 0; i < contents.size(); i++){
-            str += "\n - " + contents.get(i);
+            str += "\n - " + contents.get(i).toString();
         }
         return str;
     }
 
-    
+    public void populateRoom(ArrayList<Monster> mons, ArrayList<Item> items){
+        int monNum = GlumboToolbox.randInt(0,1);
+        int itemNum = GlumboToolbox.randInt(1,2);
+        for (int i = 0; i < monNum; i++){
+            this.addEntity(new Monster());
+        }
+        for (int i = 0; i < itemNum; i++){
+            int randomizer = GlumboToolbox.randInt(1,4);
+            if (randomizer == 1){
+                this.addEntity(new Weapon());
+            } else {
+                this.addEntity(new Potion());
+            }
+        }
+    }    
 }

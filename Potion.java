@@ -12,6 +12,10 @@ public class Potion extends Item {
         this.numBuffs = buffs;
     }
 
+    public Potion(){
+        this("Unknown Potion",GlumboToolbox.randInt(0,50),0,1);
+    }
+
     // Accessors
     public int getHpVal() { return hpChange; }
     public int getBuffVal() { return buffValue; }

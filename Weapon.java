@@ -12,6 +12,10 @@ public class Weapon extends Item {
         this.twoHanded = twoHanded;
     }
 
+    public Weapon(){
+        this("Sword",7,false,false);
+    }
+
     // Accessors
     public int getDamage() { return damage; }
     public boolean isRanged() { return ranged; }
