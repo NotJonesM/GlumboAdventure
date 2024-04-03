@@ -1,6 +1,6 @@
 public class Item extends Entity {
     // Constructor
-    public Item() {
-        super();
+    public Item(String name) {
+        super(name);
     }    
 }
