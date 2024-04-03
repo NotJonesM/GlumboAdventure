@@ -1,3 +1,7 @@
+
+/**
+ * Doesn't do anything anymore
+ */
 public class Door {
     // Fields
     private String type; // type of door, for descriptions' sake, e.g., wood, stone, arched, etc. 
