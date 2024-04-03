@@ -30,10 +30,4 @@ public class Monster extends Entity{
     public void attack(Player target){
         target.takeDmg(dmg);
     }
-
-    public void onDeath(Monster m){
-        if (m.getHp() <= 0){
-
-        }
-    }
 }
