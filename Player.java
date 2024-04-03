@@ -5,6 +5,8 @@ public class Player {
     private String name;
     private ArrayList<Item> inventory;
     private double currentBuff = 0;
+    private int row;
+    private int col;
 
     //Constructors
     public Player(){
@@ -29,7 +31,16 @@ public class Player {
         return inventory;
     }
 
+    public int getRow() { return row; }
+    public int getCol() { return col; }
+
     //Methods
+
+    public void moveUp() { row--; }
+    public void moveDown() { row++; }
+    public void moveLeft() { col--; }
+    public void moveRight() { col++; }
+
     public void attack(Monster mob){
         for (Item i : inventory){
             if (i instanceof Weapon w){

@@ -28,6 +28,7 @@ class Dungeon {
     }
 
     // Accessors
+    public ArrayList<ArrayList<Room>> getDungeon() { return dungeon; }
     public int getLength() { return dungeon.size(); }
     public int getWidth() { return dungeon.get(0).size(); } // assumes dungeon is not a ragged array
     public int getEntranceRow() { return entranceRow; }
