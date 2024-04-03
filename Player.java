@@ -10,13 +10,17 @@ public class Player {
 
     //Constructors
     public Player(){
-        name = "Nameless";
+        this.name = "Nameless";
         hp = 100;
+        this.row = 0;
+        this.col = 0;
     }
 
     public Player(String name){
         this.name = name;
         hp = 100;
+        this.row = 0;
+        this.col = 0;
     }
     //Accessors
     public int getHp(){
