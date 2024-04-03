@@ -12,6 +12,7 @@ public class Room {
     private ArrayList<Entity> contents; // Entities in the room
     private ArrayList<Door> doors; // Doors in the room (Max of 4)
 
+    // -------------------------------------------------------------------------
     // Constructors
 
     /**
@@ -35,6 +36,7 @@ public class Room {
         this(0, 0, new ArrayList<Entity>(), new ArrayList<Door>());
     }
 
+    // -------------------------------------------------------------------------
     // Accessors
     
     /**
@@ -58,6 +60,14 @@ public class Room {
         return this.contents;
     }
 
+    /**
+     * @return list of doors in the room
+     */
+    public ArrayList<Door> getDoors(){
+        return this.doors;
+    }
+
+    // -------------------------------------------------------------------------
     // Mutators
 
     /**
@@ -85,5 +95,29 @@ public class Room {
         contents.add(e);
     }
 
-    //TODO add and get doors methods
+    /**
+     * Adds door to the list of doors
+     * @param d - door to be added
+     */
+    public void addDoor(Door d){
+        if (doors.size() < 4){
+            doors.add(d);
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // Other methods
+
+    /**
+     * Converts room to a string
+     */
+    public String toString(){
+        String str = "Room with: ";
+        for (int i = 0; i < contents.size(); i++){
+            str += "\n - " + contents.get(i);
+        }
+        return str;
+    }
+
+    
 }
