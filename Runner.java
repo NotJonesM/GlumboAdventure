@@ -6,8 +6,9 @@ public class Runner {
         Dungeon d = new Dungeon("The Undercity", 5, 5, new ArrayList<Entity>(), new ArrayList<Entity>(), 0, 0, 5, 5);
         Player p = new Player("Yourself");
         Scanner scan = new Scanner(System.in);
+        boolean running = true;
 
-        while(true) { // ###### MAIN RUNNER LOOP #####
+        while(running) { // ###### MAIN RUNNER LOOP #####
             System.out.print("Enter a command: ");
             String in = scan.nextLine().toUpperCase();
             Room currentRoom = d.getDungeon().get(p.getRow()).get(p.getCol());
@@ -53,7 +54,7 @@ public class Runner {
                     System.out.println(m.getName() + " deals " + m.getDmg() + "to you!");
                     p.takeDmg(m.getDmg());
                     System.out.println("You are at " + p.getHp() + "/100 HP!");
-                    if (p.getHp() <= 0) { System.out.println("You lose."); break;}
+                    if (p.getHp() <= 0) { System.out.println("You lose."); running = false; break;}
                 }
             }
 
