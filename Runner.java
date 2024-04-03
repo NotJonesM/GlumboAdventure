@@ -37,12 +37,15 @@ public class Runner {
                 System.out.println(currentRoom);
             }
             else if (GlumboToolbox.matchStart(in, "USE")) {
-                Potion pot = (Potion) p.getInventory()
+                Potion pot = (Potion) p.getInventory().get(p.getInventory().indexOf(in.substring(4, in.length())));
+                p.usePotion(pot);
             }
             else if (GlumboToolbox.matchStart(in, "INVENTORY")) { 
                 System.out.println(p.getInventory()); // TODO idk if this will work
             }
             else { System.out.println("Command not recognized!"); }
+
+            
         }
     }
 }
