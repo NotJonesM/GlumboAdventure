@@ -43,7 +43,7 @@ class Dungeon {
     public void populateMap() {
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; r++) {
-                // TODO call room constructor 
+                dungeon.get(r).get(c).populateRoom(possibleMonsters, possibleItems);
             }
         } 
     }

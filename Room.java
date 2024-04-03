@@ -120,7 +120,7 @@ public class Room {
         return str;
     }
 
-    public void populateRoom(ArrayList<Monster> mons, ArrayList<Item> items){
+    public void populateRoom(ArrayList<Entity> mons, ArrayList<Entity> items){
         int monNum = GlumboToolbox.randInt(0,1);
         int itemNum = GlumboToolbox.randInt(1,2);
         for (int i = 0; i < monNum; i++){
