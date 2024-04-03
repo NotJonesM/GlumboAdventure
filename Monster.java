@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Monster extends Entity{
     private int hp;
     private int dmg;
@@ -29,5 +27,9 @@ public class Monster extends Entity{
 
     public void attack(Player target){
         target.takeDmg(dmg);
+    }
+
+    public String toString(){
+        return super.getName() + " with " + hp + " remaining hp";
     }
 }
