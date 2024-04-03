@@ -88,4 +88,12 @@ public class Player {
     public void takeDmg(int dmg){
         hp = hp - dmg;
     }
+
+    public void removeItem(Item r){
+        for (Item i : inventory){
+            if (i.equals(r)){
+                inventory.remove(i);
+            }
+        }
+    }
 }
