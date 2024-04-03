@@ -1,17 +1,18 @@
-public class Monster {
+import java.util.ArrayList;
+
+public class Monster extends Entity{
     private int hp;
-    private String name;
     private int dmg;
     //Constructors
     public Monster(){
+        super("nameless monster");
         hp = 100;
-        name = "nameless monster";
         dmg = 5;
     }
 
     public Monster(String n, int h, int d){
+        super(n);
         hp = h;
-        name = n;
         dmg = d;
     }
     //Accessors
@@ -21,9 +22,6 @@ public class Monster {
     public int getDmg(){
         return dmg;
     }
-    public String getName(){
-        return name;
-    }
     //Methods
     public void changeHp(int dmg){
         this.hp = hp - dmg;
@@ -31,5 +29,11 @@ public class Monster {
 
     public void attack(Player target){
         target.takeDmg(dmg);
+    }
+
+    public void onDeath(Monster m){
+        if (m.getHp() <= 0){
+
+        }
     }
 }
