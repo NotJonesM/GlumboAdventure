@@ -120,6 +120,11 @@ public class Room {
         return str;
     }
 
+    /**
+     * Populates the room randomly from a list of monsters and items
+     * @param mons a list of monsters that can spawn in that room
+     * @param items a list of items that can spawn in that room
+     */
     public void populateRoom(ArrayList<Entity> mons, ArrayList<Entity> items){
         int monNum = GlumboToolbox.randInt(0,1);
         int itemNum = GlumboToolbox.randInt(1,2);

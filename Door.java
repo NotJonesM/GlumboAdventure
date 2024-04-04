@@ -1,4 +1,3 @@
-
 /**
  * Doesn't do anything anymore
  */

@@ -1,5 +1,12 @@
+/**
+ * A series of toolbox functions used through the program
+ */
+
 public class GlumboToolbox {
     
+    /**
+     * Returns true if s begins with target. Case insensitive.
+     */
     public static boolean matchStart(String s, String target) {
         return (s.substring(0, target.length()).toUpperCase().equals(target.toUpperCase()));
     }

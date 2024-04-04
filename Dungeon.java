@@ -37,9 +37,12 @@ class Dungeon {
     // Methods
     public void printMap(){
         System.out.println(name + ": ");
-        System.out.println(dungeon.toString());
+        System.out.println(dungeon.toString()); // TODO idk if this will work
     }
 
+    /**
+     * Go through and populate each room in the map using Room.java's populationRoom() method, passing the ArrayList fields
+     */
     public void populateMap() {
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; r++) {

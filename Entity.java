@@ -1,6 +1,6 @@
 
 /**
- * 
+ * Parent class for Item.java and Monster.java. No inherent functionality aside from a name field.
  */
 public class Entity {
     // Fields

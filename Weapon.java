@@ -8,12 +8,14 @@ public class Weapon extends Item {
     public Weapon(String name, int dmg, boolean ranged, boolean twoHanded) {
         super(name);
         this.damage = dmg;
+        // Ranged and two-handed both currently do nothing. System may be implemented later if we have time.
+        // For now, the framework is here if we need. 
         this.ranged = ranged;
         this.twoHanded = twoHanded;
     }
 
     public Weapon(){
-        this("Sword",7,false,false);
+        this("Sword", 7 ,false, false);
     }
 
     // Accessors

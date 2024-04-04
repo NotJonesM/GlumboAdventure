@@ -22,6 +22,9 @@ public class Potion extends Item {
     public int getNumBuffs() { return numBuffs; }
 
     // Accessors
+    /**
+     * Now-defunct system for charges of a potion - may be brought back if we have more dev time!
+     */
     public void setNumBuffs(int n) { this.numBuffs = n; }
 
     // Method
