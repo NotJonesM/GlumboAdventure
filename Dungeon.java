@@ -24,6 +24,12 @@ class Dungeon {
         this.exitCol = exitCol;
         this.rows = rows;
         this.cols = cols;
+        for (int r = 0; r < rows; r++) {
+            dungeon.add(r, new ArrayList<Room>());
+            for (int c = 0; c < cols; c++) {
+                dungeon.get(r).add(c, new Room());
+            }
+        }
         populateMap();
     }
 
@@ -45,7 +51,7 @@ class Dungeon {
      */
     public void populateMap() {
         for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; r++) {
+            for (int c = 0; c < cols; c++) {
                 dungeon.get(r).get(c).populateRoom(possibleMonsters, possibleItems);
             }
         } 
