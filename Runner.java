@@ -49,7 +49,7 @@ public class Runner {
         items.add(new Weapon("Worn Shortsword", 8, false, false));
 
         // Setup
-        System.out.println("Welcome to Glumbo Adventure, the text-based dungeon crawler you know and love! Move around the map by typing the keywords “Move Up”, “Move Down”, “Move Left”, and “Move Right”. Fight your way through enemies and collect cool treasure! Good luck and have fun!");
+        System.out.println("Welcome to Glumbo Adventure, the text-based dungeon crawler you know and love! Move around the map by typing the keywords Move Up, Move Down, Move Left, and Move Right. Fight your way through enemies and collect cool treasure! Good luck and have fun!");
 
         // Temporary 5x5 dungeon, player starts at 0,0 and the exit is 5,5. 
         Dungeon d = new Dungeon("The Undercity", 5, 5, items, monsters, 0, 0, 5, 5);
