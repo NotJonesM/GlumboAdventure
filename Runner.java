@@ -100,7 +100,7 @@ public class Runner {
             else { System.out.println("Command not recognized!"); }
 
             // print the newest iteration of the map
-            d.printMap();
+            //d.printMap();
 
             // monster(s) damage players
             for (Entity e : currentRoom.getContents()) {

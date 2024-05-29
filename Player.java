@@ -43,10 +43,21 @@ public class Player {
     // Methods
 
     // Move commands, simply mutators for the player's x and y coords.
-    public void moveUp() { row--; }
-    public void moveDown() { row++; }
-    public void moveLeft() { col--; }
-    public void moveRight() { col++; }
+    public void moveUp() {
+        row--;
+    }
+    
+    public void moveDown() {
+        row++;
+    }
+    
+    public void moveLeft() { 
+        col--; 
+    }
+    
+    public void moveRight() { 
+        col++; 
+    }
 
     /**
      * Attack the specific mob with damage equal to the current weapon's damage stat.
